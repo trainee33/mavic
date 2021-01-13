@@ -1,0 +1,115 @@
+.specifications {
+	//
+	// .specifications__title
+	&__title {
+		@media (max-width: 640px) {
+			padding-left: 0;
+		}
+	}
+
+	// .specifications__inner
+	&__inner {
+		background: url('../images/page/mavic.png') center no-repeat;
+		@media (max-width: 640px) {
+			background: url('../images/page/mavic.png') center/contain no-repeat;
+		}
+	}
+
+	// .specifications__item
+	&__item {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding-left: 50px;
+		&:first-child {
+			padding-bottom: 160px;
+		}
+		&--top {
+			position: relative;
+			&::before {
+				position: absolute;
+				content: '';
+				top: 15px;
+				left: 230px;
+				width: 230px;
+				height: 115px;
+				background: url('../images/icons/line4.svg') 0 0 no-repeat;
+			}
+			&::after {
+				position: absolute;
+				content: '';
+				top: 15px;
+				right: 310px;
+				width: 260px;
+				height: 103px;
+				background: url('../images/icons/line5.svg') 0 0 no-repeat;
+				@media (max-width: 1200px) {
+					right: 295px;
+					width: 170px;
+				}
+			}
+			@media (max-width: 1100px) {
+				&::before,
+				&::after {
+					display: none;
+				}
+			}
+		}
+		&--bottom {
+			position: relative;
+			&::before {
+				position: absolute;
+				content: '';
+				top: -65px;
+				left: 260px;
+				width: 350px;
+				height: 81px;
+				background: url('../images/icons/line6.svg') 0 0 no-repeat;
+				@media (max-width: 1200px) {
+					left: 200px;
+				}
+			}
+			&::after {
+				position: absolute;
+				content: '';
+				top: -75px;
+				right: 310px;
+				width: 125px;
+				height: 90px;
+				background: url('../images/icons/line7.svg') 0 0 no-repeat;
+			}
+			@media (max-width: 1100px) {
+				&::before,
+				&::after {
+					display: none;
+				}
+			}
+		}
+		@media (max-width: 640px) {
+			padding-left: 0;
+		}
+	}
+
+	// .specifications__box
+	&__box {
+		width: 280px;
+		@media (max-width: 640px) {
+			margin-bottom: 30px;
+		}
+	}
+
+	// .specifications__box-title
+	&__box-title {
+		font-weight: 700;
+		font-size: 21px;
+		line-height: 28px;
+		margin-bottom: 10px;
+	}
+
+	// .specifications__box-text
+	&__box-text {
+		font-weight: 300;
+		font-size: 15px;
+		line-height: 130%;
+	}
+}

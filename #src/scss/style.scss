@@ -1,0 +1,169 @@
+//<МИКСИНЫ>====================================
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+//<ШРИФТЫ>=====================================
+
+//<Подключаем шрифты>=======================================
+//&display=swap&subset=cyrillic-ext
+@import "fonts.scss";
+
+//<ПЕРЕМЕННЫЕ>============================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>==================================
+@import "reset.scss";
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+body {
+	width: 100%;
+	min-width: 320px;
+	overflow-x: hidden;
+	color: #fff;
+	font-size: 15px;
+	font-family: "Ubuntu";
+	background-color: #fff;
+}
+a {
+	outline: none;
+	text-decoration: none;
+	list-style: none;
+	color: #fff;
+}
+a:focus,
+a:active {
+	outline: none;
+}
+.hidden {
+	visibility: hidden;
+}
+picture {
+	box-sizing: border-box;
+	overflow: hidden;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.input {
+	border-radius: 0 !important;
+	width: 100%;
+	display: block;
+	padding: 0px 0 0 20px;
+}
+textarea.input {
+	resize: none;
+	padding: 0px 0px;
+}
+._ibg {
+	position: relative;
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+body.ie {
+	._ibg {
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	._ibg img {
+		width: 0;
+		height: 0;
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+.btn-reset {
+	border: none;
+	background-color: transparent;
+	padding: 0;
+	margin: 0;
+}
+//</ОБОЛОЧКА>==============================
+.container {
+	position: relative;
+	max-width: 1270px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+//</ОСНОВНОЙ БЛОК.ОБЩИЕ СТИЛИ>============================================
+.page-section {
+	position: relative;
+	background: url('../images/page/page-bg.jpg') top center/cover no-repeat;
+	min-height: 100vh;
+	padding: 70px 0 50px;
+	&:before {
+		position: absolute;
+		content: '';
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(107.54deg, rgba(23, 26, 28, 0.72) 0%, #5e5e57 100%);
+		opacity: 0.15;
+	}
+	@media (max-width: 768px) {
+		height: 100%;
+	}
+}
+.section-title {
+	font-family: "SFProDisplay";
+	font-weight: 400;
+	font-size: 44px;
+	line-height: 53px;
+	padding: 110px 0 0 25px;
+	margin-bottom: 55px;
+	@media (max-width: 1100px) {
+		font-size: 40px;
+		line-height: 35px;
+		padding: 45px 0 0 25px;
+	}
+	@media (max-width: 768px) {
+		font-size: 35px;
+	}
+}
+.scroll__btn {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	padding: 15px 0 30px;
+}
+.slick-track {
+	display: flex;
+}
+.slick-list {
+	overflow: hidden;
+}
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>=============================
+@import "header.scss";
+@import "hero.scss";
+@import "products.scss";
+@import "benefits.scss";
+@import "specifications.scss";
+@import "questions.scss";
+@import "contacts.scss";
+@import "footer.scss";

@@ -1,0 +1,11 @@
+.footer {
+	position: absolute;
+	bottom: 32px;
+	right: 64px;
+	// .footer__copy
+	&__copy {
+		font-weight: 300;
+		font-size: 13px;
+		opacity: 0.64;
+	}
+}
